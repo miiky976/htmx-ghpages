@@ -5,7 +5,7 @@
 <body>
 	<script src="https://unpkg.com/htmx.org@1.9.6"></script>
 	<div>
-	<button hx-post="./about" hx-trigger="click" hx-target="#parent-div" hx-swap="outerHTML">
+	<button hx-get="./about" hx-trigger="click" hx-target="#parent-div" hx-swap="outerHTML">
 		About me
 	</button>
 	<div hx-get="./home" hx-trigger="load delay:0.5s" hx-swap="outerHTML">
