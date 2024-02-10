@@ -1,16 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Home</title>
 	<script src="https://unpkg.com/htmx.org@1.9.6"></script>
 	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A simple example of using htmx to create a single page application and githubpages">
 </head>
 <body>
 	<main>
-	<button onclick="window.print()" class="noPrint">Print</button>
-	<div hx-get="./about" hx-trigger="click" hx-target="#parent-div" hx-swap="outerHTML">
-		About me
-	</div>
-	<div hx-get="./home" hx-trigger="load delay:0.5s" hx-swap="outerHTML">
-	</div>
+		<nav class="noPrint" hx-trigger="click" hx-target="#parent-div" hx-swap="outerHTML">
+			<button href="./" hx-get="./home">Home</button>
+			<button href="./about" hx-get="./about">About</button>
+			<button onclick="window.print()">Print</button>
+		</nav>
+	<div hx-get="./home" hx-trigger="load delay:0.5s" hx-swap="outerHTML"></div>
 	</main>
 </html>

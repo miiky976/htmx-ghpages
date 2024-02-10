@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+* {
+	transition: all 0.3s ease;
+	font-family: 'JetBrains Mono', monospace;
+}
+
 main {
-	padding: 0 20rem;
+	margin: 1rem 20rem;
 }
 
 @page { size: auto;  margin: 0mm; }
@@ -9,6 +16,24 @@ main {
     display:none;
   }
   main {
-    padding: 5rem;
+    margin: 2rem 5rem;
   }
+}
+
+
+nav {
+	button {
+		padding: 0.5rem 1rem;
+		border-radius: 0;
+	}
+}
+
+p {
+	font-size: 1rem;
+}
+
+@media (max-width: 1140px) {
+	main {
+		margin: 1rem;
+	}
 }
