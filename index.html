@@ -1,14 +1,16 @@
 <html>
 <head>
 	<title>Home</title>
+	<script src="https://unpkg.com/htmx.org@1.9.6"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<script src="https://unpkg.com/htmx.org@1.9.6"></script>
-	<div>
-	<button hx-get="./about" hx-trigger="click" hx-target="#parent-div" hx-swap="outerHTML">
+	<main>
+	<button onclick="window.print()" class="noPrint">Print</button>
+	<div hx-get="./about" hx-trigger="click" hx-target="#parent-div" hx-swap="outerHTML">
 		About me
-	</button>
+	</div>
 	<div hx-get="./home" hx-trigger="load delay:0.5s" hx-swap="outerHTML">
 	</div>
-	</div>
+	</main>
 </html>

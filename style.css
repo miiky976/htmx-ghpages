@@ -1,0 +1,14 @@
+main {
+	padding: 0 20rem;
+}
+
+@page { size: auto;  margin: 0mm; }
+
+@media print {
+  .noPrint{
+    display:none;
+  }
+  main {
+    padding: 5rem;
+  }
+}
