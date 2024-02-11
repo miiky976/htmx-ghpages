@@ -3,6 +3,8 @@
 <head>
 	<title>Home</title>
 	<script src="https://unpkg.com/htmx.org@1.9.6"></script>
+	<script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+	<script src="https://unpkg.com/mustache@latest"></script>
 	<link rel="stylesheet" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="A simple example of using htmx to create a single page application and githubpages">
@@ -14,6 +16,19 @@
 			<button hx-get="./sections/about">About</button>
 			<button onclick="window.print()">Print</button>
 		</nav>
-	<div hx-get="./sections/home" hx-trigger="load delay:0.5s" hx-swap="outerHTML"></div>
+	<div hx-get="./sections/home" hx-trigger="load" hx-swap="outerHTML"></div>
+	<div id="language" hx-ext="client-side-templates" hx-trigger="load" hx-get="./temp.json" hx-swap="#jsom" mustache-template="foo">
+	<p id="jsom"></p>
+		<template id="foo">
+			<p>{{name}}</p>
+			{{book}}
+		</template>
+	</div>
 	</main>
+	<script>
+		var language = navigator.language.substring(0, 2);
+		console.log(language);
+		var langhandler = document.getElementById('language');
+		langhandler.setAttribute('hx-get', './langs/' + language + '.json');
+	</script>
 </html>
